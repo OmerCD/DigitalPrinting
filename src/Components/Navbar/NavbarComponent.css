@@ -1,0 +1,39 @@
+.navigation {
+    background: rgba(19, 19, 19, 0.514);
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.nav-head {
+    font-size: 16pt;
+}
+
+.nav-item {
+    background: rgba(19, 19, 19, 0.514);
+}
+
+.navdropdown-item {
+    height: 60px;
+    background: rgba(19, 19, 19, 0.514);
+    color: white;
+}
+
+.whatsapp-nav-image {
+    width: 64px;
+    height: 64px;
+    opacity: 0.5;
+}
+
+.whatsapp-nav-image:hover {
+    opacity: 1;
+}
+
+.whatsapp-nav-text {
+    width: 128px;
+    height: 32px;
+    opacity: 0.5;
+}
+
+.whatsapp-nav-text:hover {
+    opacity: 1;
+}

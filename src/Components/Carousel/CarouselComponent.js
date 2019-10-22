@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import "./CarouselComponent.css";
+import React, { Component } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import './CarouselComponent.css';
 
 export default class CarouselComponent extends Component {
   render() {
@@ -44,9 +44,7 @@ export default class CarouselComponent extends Component {
 
           <Carousel.Caption>
             <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

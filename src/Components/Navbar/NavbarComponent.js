@@ -1,41 +1,43 @@
-import React, { Component } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import "./NavbarComponent.css";
+import React, { Component } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import './NavbarComponent.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   withRouter,
   Link,
-  NavLink
-} from "react-router-dom";
+  NavLink,
+} from 'react-router-dom';
+import Image from 'react-bootstrap/Image';
+import Container from "react-bootstrap/Container";
 import HomeComponent from "../Home/HomeComponent";
 import AboutUsComponent from "../AboutUs/AboutUsComponent";
 import GalleryComponent from "../Gallery/GalleryComponent";
 import whatsapp2 from "../../images/whatsapp2.png";
-import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
-import styled, { css, keyframes } from "styled-components";
-import navAnimation from "react-animations/lib/fade-in";
-import StyledNavBarComponent from "./StyledNavBarComponent"
+import styled, { css, keyframes } from 'styled-components';
+import navAnimation from 'react-animations/lib/fade-in';
+import StyledNavBarComponent from './StyledNavBarComponent';
 
 class NavbarComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: window.location.pathname,
-      navTransparency: false
+      navTransparency: false,
     };
   }
+
   componentDidMount() {
     this.props.history.listen(() => {
       this.setState({ currentPage: window.location.pathname });
     });
   }
+
   handleLinkClick = (e, data) => {
     if (data != null) {
       this.pageChange(data);
@@ -43,6 +45,7 @@ class NavbarComponent extends Component {
       this.setState({ currentPage: data });
     }
   };
+
   render() {
     const anim = keyframes`${navAnimation}`;
 
@@ -74,7 +77,7 @@ class NavbarComponent extends Component {
                       to="/home"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, "/home")}
+                      onClick={e => this.handleLinkClick(e, '/home')}
                     >
                       Ana Sayfa
                     </Nav.Link>
@@ -82,73 +85,39 @@ class NavbarComponent extends Component {
                       to="/aboutus"
                       as={NavLink}
                       // className="link link-active"
-                      onClick={e => this.handleLinkClick(e, "/aboutus")}
+                      onClick={e => this.handleLinkClick(e, '/aboutus')}
                     >
                       Hakkımızda
                     </Nav.Link>
-                    <NavDropdown
-                      title="Dijitak Baskı"
-                      id="basic-nav-dropdown"
-                      className="link"
-                    >
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                    <NavDropdown title="Dijitak Baskı" id="basic-nav-dropdown" className="link">
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Vinyl Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Folyo Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Afiş Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Poster Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Billboard Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         One Way Vision Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Mesh Baskı
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Folyo Kesim
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Kanvas Baskı (Tablo)
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        className="navdropdown-item"
-                        href="#action/3.1"
-                      >
+                      <NavDropdown.Item className="navdropdown-item" href="#action/3.1">
                         Cam Kumlama
                       </NavDropdown.Item>
                     </NavDropdown>
@@ -156,7 +125,7 @@ class NavbarComponent extends Component {
                       to="/gallery"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, "/gallery")}
+                      onClick={e => this.handleLinkClick(e, '/gallery')}
                     >
                       Galeri
                     </Nav.Link>
@@ -164,18 +133,14 @@ class NavbarComponent extends Component {
                       to="/contact"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, "/contact")}
+                      onClick={e => this.handleLinkClick(e, '/contact')}
                     >
                       İletişim
                     </Nav.Link>
                   </Nav>
                   <div>
                     <a href="https://api.whatsapp.com/send?phone=905322261654&text=&source=&data=">
-                      <img
-                        className="whatsapp-nav-text"
-                        src={whatsapp2}
-                        alt="whatsapp"
-                      ></img>
+                      <img className="whatsapp-nav-text" src={whatsapp2} alt="whatsapp" />
                     </a>
                   </div>
                 </Navbar.Collapse>
@@ -192,6 +157,5 @@ class NavbarComponent extends Component {
     );
   }
 }
-
 
 export default withRouter(NavbarComponent);

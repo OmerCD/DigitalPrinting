@@ -1,6 +1,6 @@
-import React from "react";
-import NavbarComponent from "./Components/Navbar/NavbarComponent";
-import CarouselComponent from "./Components/Carousel/CarouselComponent";
+import React from 'react';
+import NavbarComponent from './Components/Navbar/NavbarComponent';
+import CarouselComponent from './Components/Carousel/CarouselComponent';
 
 class App extends React.Component {
   render() {

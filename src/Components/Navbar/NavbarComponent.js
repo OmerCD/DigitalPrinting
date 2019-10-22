@@ -14,12 +14,12 @@ import {
   NavLink,
 } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
+import styled, { css, keyframes } from 'styled-components';
 import HomeComponent from "../Home/HomeComponent";
 import AboutUsComponent from "../AboutUs/AboutUsComponent";
 import GalleryComponent from "../Gallery/GalleryComponent";
 import whatsapp2 from "../../images/whatsapp2.png";
-import styled, { css, keyframes } from 'styled-components';
 import navAnimation from 'react-animations/lib/fade-in';
 import StyledNavBarComponent from './StyledNavBarComponent';
 
@@ -27,14 +27,14 @@ class NavbarComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: window.location.pathname,
+      currentPage: this.props.location.pathname,
       navTransparency: false,
     };
   }
 
   componentDidMount() {
     this.props.history.listen(() => {
-      this.setState({ currentPage: window.location.pathname });
+      this.setState({ currentPage: this.props.location.pathname });
     });
   }
 

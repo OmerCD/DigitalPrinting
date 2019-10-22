@@ -16,35 +16,22 @@ import {
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import styled, { css, keyframes } from 'styled-components';
-import HomeComponent from "../Home/HomeComponent";
-import AboutUsComponent from "../AboutUs/AboutUsComponent";
-import GalleryComponent from "../Gallery/GalleryComponent";
-import whatsapp2 from "../../images/whatsapp2.png";
 import navAnimation from 'react-animations/lib/fade-in';
+import HomeComponent from '../Home/HomeComponent';
+import AboutUsComponent from '../AboutUs/AboutUsComponent';
+import GalleryComponent from '../Gallery/GalleryComponent';
+import whatsapp2 from '../../images/whatsapp2.png';
 import StyledNavBarComponent from './StyledNavBarComponent';
 
 class NavbarComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: this.props.location.pathname,
       navTransparency: false,
     };
   }
 
-  componentDidMount() {
-    this.props.history.listen(() => {
-      this.setState({ currentPage: this.props.location.pathname });
-    });
-  }
-
-  handleLinkClick = (e, data) => {
-    if (data != null) {
-      this.pageChange(data);
-
-      this.setState({ currentPage: data });
-    }
-  };
+  handleLinkClick = data => {};
 
   render() {
     const anim = keyframes`${navAnimation}`;
@@ -53,10 +40,7 @@ class NavbarComponent extends Component {
       <div>
         <Router>
           <div>
-            <StyledNavBarComponent
-              page={this.state.currentPage}
-              setOnPageChange={change => (this.pageChange = change)}
-            >
+            <StyledNavBarComponent>
               <Navbar variant="dark" expand="lg">
                 <Navbar.Brand href="#home" className="nav-head">
                   <Container>
@@ -77,7 +61,7 @@ class NavbarComponent extends Component {
                       to="/home"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, '/home')}
+                      onClick={() => this.handleLinkClick('/home')}
                     >
                       Ana Sayfa
                     </Nav.Link>
@@ -85,7 +69,7 @@ class NavbarComponent extends Component {
                       to="/aboutus"
                       as={NavLink}
                       // className="link link-active"
-                      onClick={e => this.handleLinkClick(e, '/aboutus')}
+                      onClick={() => this.handleLinkClick('/aboutus')}
                     >
                       Hakkımızda
                     </Nav.Link>
@@ -125,7 +109,7 @@ class NavbarComponent extends Component {
                       to="/gallery"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, '/gallery')}
+                      onClick={() => this.handleLinkClick('/gallery')}
                     >
                       Galeri
                     </Nav.Link>
@@ -133,7 +117,7 @@ class NavbarComponent extends Component {
                       to="/contact"
                       as={NavLink}
                       // className="link"
-                      onClick={e => this.handleLinkClick(e, '/contact')}
+                      onClick={() => this.handleLinkClick('/contact')}
                     >
                       İletişim
                     </Nav.Link>
@@ -158,4 +142,4 @@ class NavbarComponent extends Component {
   }
 }
 
-export default withRouter(NavbarComponent);
+export default NavbarComponent;

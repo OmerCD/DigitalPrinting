@@ -9,8 +9,10 @@ export default class CarouselComponent extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/1920/960"
+            src="https://picsum.photos/id/1/1920/960"
             alt="First slide"
+            width="1920"
+            height="960"
           />
           <Carousel.Caption>
             <h3>First slide label</h3>
@@ -20,8 +22,10 @@ export default class CarouselComponent extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/1920/960"
+            src="https://picsum.photos/id/4/1920/960"
             alt="Third slide"
+            width="1920"
+            height="960"
           />
 
           <Carousel.Caption>
@@ -32,8 +36,10 @@ export default class CarouselComponent extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/1920/960"
+            src="https://picsum.photos/id/6/1920/960"
             alt="Third slide"
+            width="1920"
+            height="960"
           />
 
           <Carousel.Caption>

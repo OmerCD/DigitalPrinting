@@ -4,18 +4,14 @@
     font-weight: bold;
 }
 
+.navigation-solid {
+    background: rgb(49, 49, 49);
+    font-size: 14pt;
+    font-weight: bold;
+}
+
 .nav-head {
     font-size: 16pt;
-}
-
-.nav-item {
-    background: rgba(19, 19, 19, 0.514);
-}
-
-.navdropdown-item {
-    height: 60px;
-    background: rgba(19, 19, 19, 0.514);
-    color: white;
 }
 
 .whatsapp-nav-image {
@@ -29,11 +25,39 @@
 }
 
 .whatsapp-nav-text {
-    width: 128px;
-    height: 32px;
+    width: 150px;
+    height: 53px;
     opacity: 0.5;
+    padding: 10px;
+    border-radius: 16px;
 }
 
 .whatsapp-nav-text:hover {
     opacity: 1;
+    animation: whatsapp-background 0.5s forwards;
+}
+
+@keyframes whatsapp-background {
+    to {
+        background: #075e54;
+    }
+}
+
+.link {
+    color: rgba(255, 255, 255, 0.5);
+    align-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.link-active {
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 16px;
 }
